@@ -62,7 +62,7 @@ const Index = () => {
           {/* <div className="mt-8 mb-8 flex justify-center">
             <NameInput />
           </div> */}
-          <p text-lg text-slate-500 max-w-2xl mx-auto> Built by Victoria Oden - Future Data Scientist</p>
+          <p text-lg text-slate-500 max-w-2xl mx-auto> Welcome to the sandbox. | Built by Victoria Oden - Future Data Scientist</p>
         </div>
 
         {/* 🔧 WEEK 2: ADD YOUR PROGRESS COMPONENT HERE! */}
@@ -138,6 +138,20 @@ const Index = () => {
           </>
         )}
       </div>
+      {/*Challange 1 Exercise: Adding Foorter & Link*/}
+      <footer className="mt-16 py-6 text-center text-slate-500 border-t">
+        © {new Date().getFullYear()} Victoria Oden — Built with React
+
+        <a 
+          href="https://www.linkedin.com/in/victoria-oden/"      // web link
+          target="_blank"                                        // opens in new tab
+          rel="noopener noreferrer"                              // security best practice
+          className="ml-2 text-blue-500 hover:underline"       // styling: ml-1 (space between name & link) and text-blue...hover:...(Tailwind CSS for hover effect)
+        >
+          LinkedIn
+        </a>
+      </footer>
+
     </div>
   );
 };
