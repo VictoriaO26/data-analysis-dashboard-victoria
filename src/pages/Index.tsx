@@ -151,7 +151,6 @@ const Index = () => {
           LinkedIn
         </a>
       </footer>
-
     </div>
   );
 };
