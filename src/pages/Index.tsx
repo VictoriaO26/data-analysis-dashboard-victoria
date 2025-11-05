@@ -45,13 +45,13 @@ const Index = () => {
         <div className="text-center mb-12">
           {/* 🎯 Logo and Title */}
           <div className="flex items-center justify-center mb-6">
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-4 rounded-full">
+            <div className="bg-gradient-to-r from-green-600 to-indigo-600 p-4 rounded-full">
               <Database className="h-12 w-12 text-white" />
             </div>
           </div>
           
           {/* 📝 WEEK 1: Students customize this title with their name */}
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-green-600 to-indigo-600 bg-clip-text text-transparent mb-4">
             Victoria's Data Hub
           </h1>
           <p className="text-xl text-slate-600 mb-2">Data Insight Engine</p>
@@ -62,7 +62,7 @@ const Index = () => {
           {/* <div className="mt-8 mb-8 flex justify-center">
             <NameInput />
           </div> */}
-          <p>Built by Victoria Oden - Future Data Scientist</p>
+          <p text-lg text-slate-500 max-w-2xl mx-auto> Built by Victoria Oden - Future Data Scientist</p>
         </div>
 
         {/* 🔧 WEEK 2: ADD YOUR PROGRESS COMPONENT HERE! */}
@@ -80,7 +80,7 @@ const Index = () => {
               <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white/70 backdrop-blur-sm">
                 <CardHeader className="text-center">
                   <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Upload className="h-8 w-8 text-blue-600" />
+                    <Upload className="h-8 w-8 text-green-600" />
                   </div>
                   <CardTitle className="text-xl">Easy Data Upload</CardTitle>
                   <CardDescription>

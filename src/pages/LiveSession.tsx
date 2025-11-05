@@ -16,7 +16,7 @@ const BasicCounter = () => {
       </CardHeader>
       <CardContent>
         <div className="text-center space-y-4">
-          <div className="text-4xl font-bold text-blue-600">{count}</div>
+          <div className="text-4xl font-bold text-green-600">{count}</div>
           <div className="space-x-2">
             <Button onClick={() => setCount(count + 1)}>+1</Button>
             <Button variant="outline" onClick={() => setCount(0)}>Reset</Button>
@@ -76,7 +76,7 @@ const NameTracker = () => {
           />
           <div className="text-center">
             <p className="text-lg">
-              Hello, <span className="font-bold text-blue-600">{name || 'stranger'}</span>! 👋
+              Hello, <span className="font-bold text-green-600">{name || 'stranger'}</span>! 👋
             </p>
           </div>
         </div>
@@ -211,7 +211,7 @@ const UploadProgressSimulator = () => {
 
           {/* Progress Text and Status */}
           <div className="text-center">
-            <span className="text-3xl font-bold text-blue-600">{Math.round(progress)}%</span>
+            <span className="text-3xl font-bold text-green-600">{Math.round(progress)}%</span>
             <div className="text-sm text-gray-600 mt-2">
               {isUploading && "📤 Uploading file..."}
               {!isUploading && progress === 0 && "📁 Ready to upload"}
@@ -322,7 +322,7 @@ export default function LiveSession() {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-4">
+          <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-indigo-600 mb-4">
             Week 2: Live Session Playground
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
