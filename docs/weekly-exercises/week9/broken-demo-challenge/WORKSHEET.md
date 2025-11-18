@@ -1,7 +1,7 @@
 # 🔍 Bug Hunting Worksheet - Quality Detective Challenge
 
 
-## Your Detective Team: _______________
+## Your Detective Team: __Victoria & BingLi_____________
 
 ---
 
@@ -22,8 +22,8 @@ Look at the UI WITHOUT clicking anything yet.
 
 **Your observations:**
 ```
-_____________________
-_____________________
+Noticed that onclick button "Show Chart" doesn't show the said chart. Neither is the 
+sample or 
 _____________________
 ```
 
@@ -41,11 +41,26 @@ Now interact with the component. Test everything!
 **What broke? Document each issue:**
 
 **Bug #1:**
+- What happened: Hide Chart button showed a dashed rectangle empty space
+- Expected behavior: See a diagram of data
+- Actual behavior: Just an empty box or space
+
+**Bug #2:**
 - What happened: _______________
 - Expected behavior: _______________
 - Actual behavior: _______________
 
-**Bug #2:**
+**Bug #3:**
+- What happened: _______________
+- Expected behavior: _______________
+- Actual behavior: _______________
+
+**Bug #4:**
+- What happened: _______________
+- Expected behavior: _______________
+- Actual behavior: _______________
+
+**Bug #5:**
 - What happened: _______________
 - Expected behavior: _______________
 - Actual behavior: _______________
@@ -58,6 +73,21 @@ Open Chrome DevTools (F12) and check the Console tab.
 - What error messages do you see?
 - What line numbers are mentioned?
 - What does the error message tell you?
+   Clicked "Hide Data" Button
+      BrokenDemo.tsx:28 
+      Error: Chart data values should be numbers, not strings.
+      handleShowChart	@	BrokenDemo.tsx:28
+
+   Clicked "Show Chart" Button
+      BrokenDemo.tsx:28 
+      Error: Chart data values should be numbers, not strings.
+      handleShowChart	@	BrokenDemo.tsx:28
+
+
+   Clicked "Use Empty Data" Button
+      BrokenDemo.tsx:57 
+      Error: Switched to empty data with no chart data. Chart will be blank.
+      onClick	@	BrokenDemo.tsx:57
 
 **Console findings:**
 Find and document all 5 bugs in the BrokenDemo component at `pages/broken-demo` (Visual, Runtime, Logic, Edge Case, and UI/UX)

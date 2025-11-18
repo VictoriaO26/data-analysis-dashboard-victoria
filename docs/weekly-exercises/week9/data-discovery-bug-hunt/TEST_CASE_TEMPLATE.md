@@ -26,9 +26,13 @@ This template shows you how to convert the bugs you found during the Bug Hunt Ch
 **Test ID**: TC-UPLOAD-001
 **Feature**: Data Upload
 **Component**: CSV File Validation
+ - app. treats image file as an csv file
 **Scenario**: Upload empty CSV file causes application crash
 **Priority**: P0 (Critical)
+ - based on how many visits and uploads of cats
+ - P0 is top priority (P0-5) 
 **Severity**: Critical
+ - How bad is the issue
 **Status**: New
 
 ---
