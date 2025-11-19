@@ -8,17 +8,35 @@ import { useState } from 'react';
 
 const UploadProgressSimulator = () => {
   // 🧠 State variables - your component's memory
-  const [progress, setProgress] = useState(0);        // Tracks progress percentage (0-100)
-  const [isUploading, setIsUploading] = useState(false); // Tracks if upload is in progress
+  const [progress, setProgress] = useState(0);              // Tracks progress percentage (0-100)
+  const [isUploading, setIsUploading] = useState(false);    // Tracks if upload is in progress
 
   // 🔄 Event handler functions - what happens when buttons are clicked
   const startUpload = () => {
-    // TODO: Implement upload simulation
-    // HINT: You'll need to use setInterval to animate the progress
-  };
+    setIsUploading(true);                         // TODO: Implement upload simulation
+    setProgress(0);
 
+    // Simulate upload progress with intervals
+    const interval = setInterval(() => {          // HINT: You'll need to use setInterval to animate the progress
+    setProgress(prevProgress => {
+      const newProgress = prevProgress + Math.random() * 15 + 5; // Random chunks
+      
+      // Complete upload when we reach 100%
+      if (newProgress >= 100) {
+        clearInterval(interval);
+        setIsUploading(false);
+        return 100;
+      }
+      
+      return newProgress;
+    });
+  }, 300); // Update every 300ms for smooth animation
+};
+
+  // Function to reset progress
   const resetProgress = () => {
-    // TODO: Reset progress back to 0
+    setProgress(0);
+    setIsUploading(false);      // TODO: Reset progress back to 0
   };
 
   const addProgress = () => {
@@ -39,12 +57,15 @@ const UploadProgressSimulator = () => {
         </div>
       </div>
 
-      {/* 📈 Progress Display */}
+      {/* 📈 Progress Display (Text and Satatus) */}
       <div className="text-center mb-6">
         <span className="text-3xl font-bold text-blue-600">{progress}%</span>
         <div className="text-sm text-gray-600 mt-2">
-          {/* TODO: Add status messages based on progress and upload state */}
-        </div>
+          {isUploading && "📤 Uploading file..."}
+          {!isUploading && progress === 0 && "📁 Ready to upload"}
+          {!isUploading && progress > 0 && progress < 100 && "⏸️ Upload paused"}
+          {!isUploading && progress === 100 && "✅ Upload complete!"}
+        </div>                         {/* TODO: Add status messages based on progress and upload state */}
       </div>
 
       {/* 🎮 Control Buttons */}
@@ -52,23 +73,15 @@ const UploadProgressSimulator = () => {
         <button 
           onClick={startUpload}
           disabled={isUploading || progress === 100}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors disabled:bg-gray-400"
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
         >
           {isUploading ? 'Uploading...' : 'Start Upload'}
         </button>
         
         <button 
-          onClick={addProgress}
-          disabled={isUploading || progress >= 100}
-          className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors disabled:bg-gray-400"
-        >
-          +25%
-        </button>
-        
-        <button 
           onClick={resetProgress}
           disabled={isUploading}
-          className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition-colors disabled:bg-gray-400"
+          className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
         >
           Reset
         </button>
@@ -76,6 +89,7 @@ const UploadProgressSimulator = () => {
 
       {/* 🎉 Fun progress messages */}
       <div className="text-center mt-4 text-sm text-gray-600">
+        
         {/* TODO: Add different messages based on progress value */}
         {/* HINT: Use conditional rendering like: */}
         {/* {progress === 0 && "Ready to start!"} */}

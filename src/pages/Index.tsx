@@ -23,6 +23,8 @@ import { DataRow } from '@/types/data';
 // import NameInput from '@/components/NameInput';
 
 // 🔧 WEEK 2: Import your UploadProgressSimulator component here
+import UploadProgressSimulator from '@/components/UploadProgressSimulator';
+
 // 🔧 WEEK 3+: Additional imports will be added as you progress
 
 const Index = () => {
@@ -71,6 +73,24 @@ const Index = () => {
         {/* <div className="mb-8">
           <UploadProgressSimulator />
         </div> */}
+
+        <Card className="bg-white/50 backdrop-blur-sm border-purple-200">
+          <CardHeader>
+            <CardTitle className="flex items-center">
+              <Upload className="mr-3 h-6 w-6 text-purple-600" />
+              Interactive Progress Demo
+            </CardTitle>
+            <CardDescription>
+              S2: State Management & Interactive Components ~ 
+              Upload progress simulator built with React state!
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <UploadProgressSimulator />
+          </CardContent>
+        </Card>
+
+
 
         {data.length === 0 ? (
           <>
